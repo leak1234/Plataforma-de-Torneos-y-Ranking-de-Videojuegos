@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+
+    <h2>Inscripciones a Torneos</h2>
+
+    <a href="{{ url_for('bp_torneo_equipo.create') }}"
+       class="btn btn-success mb-3">
+        Nueva inscripción
+    </a>
+
+    <table class="table table-bordered table-striped">
+
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Fecha Inscripción</th>
+                <!-- <th>Equipo ID</th> -->
+                <th>Acciones</th>
+            </tr>
+        </thead>
+
+        <tbody>
+        {% for torneo_equipo in torneo_equipos %}
+            <tr>
+                <td>{{ torneo_equipo.id }}</td>
+                <td>{{ torneo_equipo.fecha_inscripcion }}</td>
+                <!-- <td>{{ torneo_equipo.equipo_id }}</td> -->
+
+                <td>
+                    <a href="{{ url_for('bp_torneo_equipo.editar',
+                                        id=torneo_equipo.id) }}"
+                       class="btn btn-warning btn-sm">
+                        Editar
+                    </a>
+
+                    <form method="POST"
+                          action="{{ url_for('bp_torneo_equipo.eliminar',
+                                             id=torneo_equipo.id) }}"
+                          style="display:inline;">
+
+                        <button type="submit"
+                                class="btn btn-danger btn-sm">
+                            Eliminar
+                        </button>
+
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+
+    </table>
+
+</div>
+{% endblock %}

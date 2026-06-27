@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+
+    <h2>Lista de Partidas</h2>
+
+    <a href="{{ url_for('bp_partida.create') }}"
+       class="btn btn-success mb-3">
+        Nueva Partida
+    </a>
+
+    <table class="table table-bordered table-striped">
+
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Ronda</th>
+                <th>Fecha</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+
+        <tbody>
+        {% for partida in partidas %}
+            <tr>
+                <td>{{ partida.id }}</td>
+                <td>{{ partida.ronda }}</td>
+                <td>{{ partida.fecha }}</td>
+                <td>{{ partida.estado }}</td>
+
+                <td>
+                    <a href="{{ url_for('bp_partida.editar', id=partida.id) }}"class="btn btn-warning btn-sm"> Editar</a>
+                    <form method="POST"
+                          action="{{ url_for('bp_partida.eliminar',id=partida.id) }}"style="display:inline;">
+                        <button type="submit"class="btn btn-danger btn-sm">Eliminar</button>
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+
+    <h2>Editar Partida</h2>
+
+    <form method="POST">
+
+        <div class="mb-3">
+            <label class="form-label">Ronda</label>
+            <input type="text"
+                   class="form-control"
+                   name="ronda"
+                   value="{{ partida.ronda }}"
+                   required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Fecha</label>
+            <input type="date"
+                   class="form-control"
+                   name="fecha"
+                   value="{{ partida.fecha }}"
+                   required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Estado</label>
+            <input type="text"
+                   class="form-control"
+                   name="estado"
+                   value="{{ partida.estado }}"
+                   required>
+        </div>
+
+        <button type="submit"
+                class="btn btn-primary">
+            Actualizar
+        </button>
+
+        <a href="{{ url_for('bp_partida.index') }}"
+           class="btn btn-secondary">
+            Cancelar
+        </a>
+
+    </form>
+
+</div>
+{% endblock %}

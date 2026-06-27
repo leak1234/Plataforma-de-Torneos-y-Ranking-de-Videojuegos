@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+
+    <h2>Lista de Sanciones</h2>
+
+    <a href="{{ url_for('bp_sancion.create') }}"
+       class="btn btn-success mb-3">
+        Nueva Sanción
+    </a>
+
+    <table class="table table-bordered table-striped">
+
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Motivo</th>
+                <th>Tipo</th>
+                <th>Fecha Inicio</th>
+                <th>Fecha Fin</th>
+                <th>Jugador ID</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+
+        <tbody>
+        {% for sancion in sanciones %}
+            <tr>
+                <td>{{ sancion.id }}</td>
+                <td>{{ sancion.motivo }}</td>
+                <td>{{ sancion.tipo }}</td>
+                <td>{{ sancion.fecha_inicio }}</td>
+                <td>{{ sancion.fecha_fin }}</td>
+                <td>{{ sancion.jugador_id }}</td>
+
+                <td>
+                    <a href="{{ url_for('bp_sancion.editar',
+                                        id=sancion.id) }}"
+                       class="btn btn-warning btn-sm">
+                        Editar
+                    </a>
+
+                    <form method="POST"
+                          action="{{ url_for('bp_sancion.eliminar',
+                                             id=sancion.id) }}"
+                          style="display:inline;">
+
+                        <button type="submit"
+                                class="btn btn-danger btn-sm">
+                            Eliminar
+                        </button>
+
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+
+    </table>
+
+</div>
+{% endblock %}

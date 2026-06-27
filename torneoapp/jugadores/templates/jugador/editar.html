@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+
+    <h2>Editar Jugador</h2>
+
+    <form method="POST">
+
+        <div class="mb-3">
+            <label class="form-label">Nickname</label>
+            <input type="text"
+                   class="form-control"
+                   name="nickname"
+                   value="{{ jugador.nickname }}"
+                   required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">País</label>
+            <input type="text"
+                   class="form-control"
+                   name="pais"
+                   value="{{ jugador.pais }}"
+                   required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Ranking</label>
+            <input type="number"
+                   class="form-control"
+                   name="ranking"
+                   value="{{ jugador.ranking }}"
+                   required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Victorias</label>
+            <input type="number"
+                   class="form-control"
+                   name="victorias"
+                   value="{{ jugador.victorias }}"
+                   required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Derrotas</label>
+            <input type="number"
+                   class="form-control"
+                   name="derrotas"
+                   value="{{ jugador.derrotas }}"
+                   required>
+        </div>
+
+        <button type="submit"
+                class="btn btn-primary">
+            Actualizar
+        </button>
+
+        <a href="{{ url_for('bp_jugador.index') }}"
+           class="btn btn-secondary">
+            Cancelar
+        </a>
+
+    </form>
+
+</div>
+{% endblock %}

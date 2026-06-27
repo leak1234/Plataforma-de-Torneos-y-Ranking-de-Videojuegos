@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+
+    <h2>Crear Inscripción</h2>
+
+    <form method="POST">
+
+        <div class="mb-3">
+            <label class="form-label">
+                Fecha de inscripción
+            </label>
+
+            <input type="date"
+                   class="form-control"
+                   name="fecha_inscripcion"
+                   required>
+        </div>
+
+        <!--
+        <div class="mb-3">
+            <label class="form-label">Equipo ID</label>
+            <input type="number"
+                   class="form-control"
+                   name="equipo_id">
+        </div>
+        -->
+
+        <button type="submit"
+                class="btn btn-success">
+            Guardar
+        </button>
+
+        <a href="{{ url_for('bp_torneo_equipo.index') }}"
+           class="btn btn-secondary">
+            Cancelar
+        </a>
+
+    </form>
+
+</div>
+{% endblock %}

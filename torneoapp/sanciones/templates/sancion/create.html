@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+
+    <h2>Crear Sanción</h2>
+
+    <form method="POST">
+
+        <div class="mb-3">
+            <label class="form-label">Motivo</label>
+            <input type="text"
+                   class="form-control"
+                   name="motivo"
+                   required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Tipo</label>
+            <input type="text"
+                   class="form-control"
+                   name="tipo"
+                   required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Fecha inicio</label>
+            <input type="date"
+                   class="form-control"
+                   name="fecha_inicio"
+                   required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Fecha fin</label>
+            <input type="date"
+                   class="form-control"
+                   name="fecha_fin"
+                   required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Jugador ID</label>
+            <input type="number"
+                   class="form-control"
+                   name="jugador_id"
+                   required>
+        </div>
+
+        <button type="submit"
+                class="btn btn-success">
+            Guardar
+        </button>
+
+        <a href="{{ url_for('bp_sancion.index') }}"
+           class="btn btn-secondary">
+            Cancelar
+        </a>
+
+    </form>
+
+</div>
+{% endblock %}

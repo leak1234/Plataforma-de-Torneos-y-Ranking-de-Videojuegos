@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>Crear Estadística</h2>
+
+    <form method="POST">
+
+        <div class="mb-3">
+            <label class="form-label">Kills</label>
+            <input type="number" class="form-control"
+                   name="kills" required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Deaths</label>
+            <input type="number" class="form-control"
+                   name="deaths" required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Assists</label>
+            <input type="number" class="form-control"
+                   name="assists" required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Puntos obtenidos</label>
+            <input type="number" class="form-control"
+                   name="puntos_obtenidos" required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Tiempo de partida</label>
+            <input type="text" class="form-control"
+                   name="tiempo_partida" required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Partida ID</label>
+            <input type="number" class="form-control"
+                   name="partida_id" required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Jugador ID</label>
+            <input type="number" class="form-control"
+                   name="jugador_id" required>
+        </div>
+
+        <button type="submit" class="btn btn-success">
+            Guardar
+        </button>
+
+        <a href="{{ url_for('bp_estadistica.index') }}"
+           class="btn btn-secondary">
+            Cancelar
+        </a>
+
+    </form>
+</div>
+{% endblock %}

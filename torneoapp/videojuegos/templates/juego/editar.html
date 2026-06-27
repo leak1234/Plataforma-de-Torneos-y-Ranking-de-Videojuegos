@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+
+    <h2>Editar Juego</h2>
+
+    <form method="POST">
+
+        <div class="mb-3">
+            <label class="form-label">Nombre</label>
+            <input type="text"
+                   class="form-control"
+                   name="nombre"
+                   value="{{ juego.nombre }}"
+                   required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Género</label>
+            <input type="text"
+                   class="form-control"
+                   name="genero"
+                   value="{{ juego.genero }}"
+                   required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Descripción</label>
+            <textarea class="form-control"
+                      name="descripcion"
+                      rows="4"
+                      required>{{ juego.descripcion }}</textarea>
+        </div>
+
+        <button type="submit"
+                class="btn btn-primary">
+            Actualizar
+        </button>
+
+        <a href="{{ url_for('bp_juego.index') }}"
+           class="btn btn-secondary">
+            Cancelar
+        </a>
+
+    </form>
+
+</div>
+{% endblock %}
