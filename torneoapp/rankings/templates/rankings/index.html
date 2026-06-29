@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>lista de rankings</h1>
+<a href="{{ url_for('bp_rankings.create') }}">nuevo ranking</a>
+<ul>
+    {% for item in rankings %}
+    <li> ID Jugador: {{ item.id_jugador }}, Posición: {{ item.posicion }}, Puntos: {{ item.puntos }}</li>
+    {% else %}
+    <li>no hay rankings</li>
+    {% endfor %}
+</ul>
+{%endblock %}

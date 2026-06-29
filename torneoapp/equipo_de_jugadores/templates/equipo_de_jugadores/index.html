@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>lista de equipos de jugadores</h1>
+<a href="{{ url_for('bp_Equipo_De_Jugadores.create') }}">nuevo equipo</a>
+<ul>
+    {% for item in equipos %}
+    <li> nombre: {{ item.nombre_equipo }}, logo: {{ item.logo }}, fecha fundación: {{ item.fecha_fundacion }}</li>
+    {% else %}
+    <li>no hay equipos</li>
+    {% endfor %}
+</ul>
+{%endblock %}

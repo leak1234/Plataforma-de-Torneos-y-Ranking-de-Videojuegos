@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1> creacion Resultados</h1>
+    <form action= "{{ url_for('bp_resultados.create') }}" method="POST">
+        <label for="nombre_resultado">Nombre del Resultado:</label>
+        <input type="text" name="nombre_resultado" required><br>
+
+        <label for="descripcion">Descripción:</label>
+        <input type="text" name="descripcion" required><br>
+
+        <label for="fecha">Fecha:</label>
+        <input type="date" name="fecha" required><br>
+
+        <label for="torneo_id">ID del Torneo:</label>
+        <input type="number" name="torneo_id" required><br>
+
+        <label for="jugador_id">ID del Jugador:</label>
+        <input type="number" name="jugador_id" required><br>
+
+        <label for="fecha_registro">Fecha de Registro:</label>
+        <input type="date" name="fecha_registro" required><br>
+
+        <label for="estado">Estado:</label>
+        <input type="text" name="estado" required><br>
+
+        <input type="submit" value="Crear Resultado">
+{% endblock %}

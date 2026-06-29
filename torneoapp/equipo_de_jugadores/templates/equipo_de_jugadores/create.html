@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1> creacion Equipos de Jugadores</h1>
+    <form action= "{{ url_for('bp_Equipo_De_Jugadores.create') }}" method="POST">
+        <label for="id_equipo">ID del Equipo:</label>
+        <input type="number" name="id_equipo" required><br>
+
+        <label for="id_jugador">ID del Jugador:</label>
+        <input type="number" name="id_jugador" required><br>
+
+        <label for="fecha_registro">Fecha de Registro:</label>
+        <input type="date" name="fecha_registro" required><br>
+
+        <label for="estado">Estado:</label>
+        <input type="text" name="estado" required><br>
+
+        <input type="submit" value="Crear Equipo">
+{% endblock %}
+ 

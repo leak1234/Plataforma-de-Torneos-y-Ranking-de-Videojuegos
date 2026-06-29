@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1> creacion Usuarios</h1>
+    <form action="{{ url_for('bp_usuarios.create') }}" method="POST">
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" required><br>
+
+        <label for="apellido">Apellido:</label>
+        <input type="text" name="apellido" required><br>
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" required><br>
+
+        <label for="nombre_usuario">Nombre de Usuario:</label>
+        <input type="text" name="nombre_usuario" required><br>  
+
+        <label for="contraseña">Contraseña:</label>
+        <input type="password" name="contraseña" required><br>
+
+
+
+        <label for="estado">Estado:</label>
+        <select name="estado" required>
+            <option value="activo">Activo</option>
+            <option value="inactivo">Inactivo</option>
+        </select><br>
+
+        <label for="rol">Rol:</label>
+        <select name="rol" required>
+            <option value="admin">Admin</option>
+            <option value="usuario">Usuario</option>
+        </select><br>
+
+        <input type="submit" value="Crear Usuario">
+{% endblock %}
