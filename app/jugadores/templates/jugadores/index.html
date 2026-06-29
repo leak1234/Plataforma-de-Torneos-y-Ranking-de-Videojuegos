@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Jugadores</h2>
+
+<div class="row">
+
+    {% for j in jugadores %}
+
+    <div class="col-md-3">
+
+        <div class="card bg-dark text-white mb-3">
+
+            <div class="card-body">
+
+                <h5>{{j.nickname}}</h5>
+
+                <a class="btn btn-primary" href="{{url_for('bp_jugador.perfil',id=j.id_jugador)}}">
+
+                    Ver Perfil
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    {% endfor %}
+
+</div>
+
+{% endblock %}

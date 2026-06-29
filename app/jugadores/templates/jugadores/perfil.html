@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Perfil Jugador</h2>
+
+<div class="card bg-dark text-white">
+
+    <div class="card-body">
+
+        <h3>{{jugador.nickname}}</h3>
+
+        <p>{{jugador.descripcion}}</p>
+
+        <hr>
+
+        <h4>Estadísticas</h4>
+
+        <p>Kills: {{kills}}</p>
+
+        <p>Deaths: {{deaths}}</p>
+
+        <p>Assists: {{assists}}</p>
+
+    </div>
+
+</div>
+
+{% endblock %}

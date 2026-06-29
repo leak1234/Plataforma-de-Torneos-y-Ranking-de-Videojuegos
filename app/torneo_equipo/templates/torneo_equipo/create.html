@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<h2>Asignar Equipo a Torneo</h2>
+
+
+<form method="POST">
+
+
+    <select class="form-control mb-2" name="torneo">
+
+
+        {% for t in torneos %}
+
+        <option value="{{t.id_torneo}}">
+
+            {{t.nombre}}
+
+        </option>
+
+
+        {% endfor %}
+
+
+    </select>
+
+
+
+    <select class="form-control mb-2" name="equipo">
+
+
+        {% for e in equipos %}
+
+
+        <option value="{{e.id_equipo}}">
+
+            {{e.nombre}}
+
+        </option>
+
+
+        {% endfor %}
+
+
+    </select>
+
+
+
+    <select class="form-control mb-2" name="estado">
+
+
+        <option>Participando</option>
+
+        <option>Eliminado</option>
+
+        <option>Campeon</option>
+
+
+    </select>
+
+
+
+    <button class="btn btn-success">
+
+        Guardar
+
+    </button>
+
+
+
+</form>
+
+
+
+{% endblock %}

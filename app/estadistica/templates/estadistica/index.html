@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Estadísticas</h2>
+
+<a class="btn btn-primary mb-3" href="{{url_for('bp_estadistica.create')}}">
+    Registrar Estadística
+</a>
+
+<table class="table table-dark">
+
+    <tr>
+        <th>ID</th>
+        <th>Jugador</th>
+        <th>Partida</th>
+        <th>Kills</th>
+        <th>Deaths</th>
+        <th>Assists</th>
+        <th>Acciones</th>
+    </tr>
+
+
+    {% for e in estadisticas %}
+
+    <tr>
+
+        <td>{{e.id_estadistica}}</td>
+
+        <td>{{e.jugador.usuario}}</td>
+
+        <td>{{e.partida.id_partida}}</td>
+
+        <td>{{e.kills}}</td>
+
+        <td>{{e.deaths}}</td>
+
+        <td>{{e.assists}}</td>
+
+
+        <td>
+
+            <a class="btn btn-warning btn-sm" href="{{url_for('bp_estadistica.editar',id=e.id_estadistica)}}">
+                Editar
+            </a>
+
+
+            <a class="btn btn-danger btn-sm" href="{{url_for('bp_estadistica.eliminar',id=e.id_estadistica)}}">
+                Eliminar
+            </a>
+
+
+        </td>
+
+    </tr>
+
+    {% endfor %}
+
+</table>
+
+{% endblock %}

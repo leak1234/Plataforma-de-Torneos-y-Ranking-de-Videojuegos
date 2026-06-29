@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<h2>Editar Resultado</h2>
+
+
+<form method="POST">
+
+
+    <input class="form-control mb-2" name="marcador_equipo1" value="{{resultado.marcador_equipo1}}">
+
+
+    <input class="form-control mb-2" name="marcador_equipo2" value="{{resultado.marcador_equipo2}}">
+
+
+    <input class="form-control mb-2" name="ganador" value="{{resultado.ganador}}">
+
+
+    <button class="btn btn-warning">
+
+        Actualizar
+
+    </button>
+
+
+</form>
+
+
+{% endblock %}

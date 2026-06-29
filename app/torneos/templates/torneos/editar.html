@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Editar Torneo</h2>
+
+<form method="POST">
+
+    <input class="form-control mb-2" name="nombre" value="{{torneo.nombre}}">
+
+
+    <select class="form-control mb-2" name="id_videojuego">
+
+        {% for v in videojuegos %}
+
+        <option value="{{v.id_videojuego}}">
+            {{v.nombre}}
+        </option>
+
+        {% endfor %}
+
+    </select>
+
+
+    <input class="form-control mb-2" type="date" name="fecha_inicio" value="{{torneo.fecha_inicio}}">
+
+
+    <input class="form-control mb-2" type="date" name="fecha_fin" value="{{torneo.fecha_fin}}">
+
+
+    <select class="form-control mb-2" name="estado">
+
+        <option>{{torneo.estado}}</option>
+
+        <option>Pendiente</option>
+
+        <option>Activo</option>
+
+        <option>Finalizado</option>
+
+    </select>
+
+
+    <button class="btn btn-warning">
+        Actualizar
+    </button>
+
+</form>
+
+{% endblock %}

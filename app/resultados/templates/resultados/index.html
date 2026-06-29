@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Resultados</h2>
+
+<a class="btn btn-primary mb-3" href="{{url_for('bp_resultados.create')}}">
+    Nuevo Resultado
+</a>
+
+
+<table class="table table-dark">
+
+
+    <tr>
+
+        <th>ID</th>
+        <th>Partida</th>
+        <th>Torneo</th>
+        <th>Marcador</th>
+        <th>Ganador</th>
+        <th>Acciones</th>
+
+    </tr>
+
+
+    {% for r in resultados %}
+
+
+    <tr>
+
+
+        <td>{{r.id_resultado}}</td>
+
+
+        <td>{{r.partida.id_partida}}</td>
+
+
+        <td>{{r.torneo.nombre}}</td>
+
+
+        <td>
+            {{r.marcador_equipo1}} - {{r.marcador_equipo2}}
+        </td>
+
+
+        <td>{{r.ganador}}</td>
+
+
+        <td>
+
+
+            <a class="btn btn-warning btn-sm" href="{{url_for('bp_resultados.editar',id=r.id_resultado)}}">
+
+                Editar
+
+            </a>
+
+
+            <a class="btn btn-danger btn-sm" href="{{url_for('bp_resultados.eliminar',id=r.id_resultado)}}">
+
+                Eliminar
+
+            </a>
+
+
+        </td>
+
+
+    </tr>
+
+
+    {% endfor %}
+
+
+</table>
+
+
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<h2>Registrar Sanción</h2>
+
+
+<form method="POST">
+
+
+    <select class="form-control mb-2" name="usuario">
+
+        {% for u in usuarios %}
+
+        <option value="{{u.id_usuario}}">
+
+            {{u.usuario}}
+
+        </option>
+
+        {% endfor %}
+
+    </select>
+
+
+    <input class="form-control mb-2" name="motivo" placeholder="Motivo">
+
+
+    <input class="form-control mb-2" name="fecha" placeholder="Fecha">
+
+
+    <select class="form-control mb-2" name="estado">
+
+        <option>Activa</option>
+
+        <option>Finalizada</option>
+
+    </select>
+
+
+    <button class="btn btn-success">
+
+        Guardar
+
+    </button>
+
+
+</form>
+
+
+{% endblock %}

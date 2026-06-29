@@ -1,0 +1,161 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+    <h2 class="mb-4">
+        🏆 Crear Torneo
+    </h2>
+
+
+    <div class="card p-4">
+
+        <form method="POST">
+
+
+            <div class="mb-3">
+
+                <label class="form-label">
+                    Nombre del torneo
+                </label>
+
+                <input class="form-control" name="nombre" placeholder="Ingrese nombre del torneo" required>
+
+            </div>
+
+
+
+            <div class="mb-3">
+
+                <label class="form-label">
+                    Videojuego
+                </label>
+
+
+                <select class="form-control" name="id_videojuego" required>
+
+
+                    <option value="">
+                        -- Seleccionar videojuego --
+                    </option>
+
+
+                    {% for v in videojuegos %}
+
+
+                    <option value="{{v.id_videojuego}}">
+
+                        {{v.nombre}}
+
+                    </option>
+
+
+                    {% endfor %}
+
+
+                </select>
+
+
+            </div>
+
+
+
+
+            <div class="mb-3">
+
+
+                <label class="form-label">
+                    Fecha de inicio
+                </label>
+
+
+                <input class="form-control" type="date" name="fecha_inicio" required>
+
+
+            </div>
+
+
+
+
+            <div class="mb-3">
+
+
+                <label class="form-label">
+                    Fecha de finalización
+                </label>
+
+
+                <input class="form-control" type="date" name="fecha_fin" required>
+
+
+            </div>
+
+
+
+
+            <div class="mb-3">
+
+
+                <label class="form-label">
+                    Estado del torneo
+                </label>
+
+
+                <select class="form-control" name="estado" required>
+
+
+                    <option value="">
+                        -- Seleccionar estado --
+                    </option>
+
+
+                    <option value="Pendiente">
+                        Pendiente
+                    </option>
+
+
+                    <option value="Activo">
+                        Activo
+                    </option>
+
+
+                    <option value="Finalizado">
+                        Finalizado
+                    </option>
+
+
+                </select>
+
+
+            </div>
+
+
+
+
+            <button class="btn btn-success">
+
+                💾 Guardar torneo
+
+            </button>
+
+
+
+            <a href="{{url_for('bp_torneos.index')}}" class="btn btn-secondary">
+
+                Cancelar
+
+            </a>
+
+
+
+        </form>
+
+
+    </div>
+
+
+</div>
+
+
+{% endblock %}

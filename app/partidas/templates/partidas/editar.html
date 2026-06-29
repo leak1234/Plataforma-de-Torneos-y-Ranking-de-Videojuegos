@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Editar Partida</h2>
+
+
+<form method="POST">
+
+
+    <input class="form-control mb-2" type="date" name="fecha" value="{{partida.fecha}}">
+
+
+    <input class="form-control mb-2" name="ronda" value="{{partida.ronda}}">
+
+
+    <select class="form-control mb-2" name="estado">
+
+
+        <option>{{partida.estado}}</option>
+
+        <option>Pendiente</option>
+
+        <option>En Juego</option>
+
+        <option>Finalizada</option>
+
+
+    </select>
+
+
+    <button class="btn btn-warning">
+        Actualizar
+    </button>
+
+
+</form>
+
+
+{% endblock %}

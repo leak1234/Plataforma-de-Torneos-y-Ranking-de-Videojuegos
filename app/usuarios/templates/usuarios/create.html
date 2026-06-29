@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<h2>Crear Usuario</h2>
+
+
+<form method="POST">
+
+
+    <input class="form-control mb-2" name="usuario" placeholder="Usuario">
+
+
+    <input class="form-control mb-2" name="correo" placeholder="Correo">
+
+
+    <input class="form-control mb-2" name="password" placeholder="Contraseña">
+
+
+    <select class="form-control mb-2" name="rol">
+
+        <option>usuario</option>
+
+        <option>jugador</option>
+
+        <option>admin</option>
+
+    </select>
+
+
+    <button class="btn btn-success">
+
+        Guardar
+
+    </button>
+
+
+</form>
+
+
+{% endblock %}

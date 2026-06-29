@@ -1,0 +1,203 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<div class="card p-4">
+
+    <h2 class="mb-4">
+        🎮 Crear Partida
+    </h2>
+
+
+
+    <form method="POST">
+
+
+
+        <label class="form-label">
+            Torneo
+        </label>
+
+
+        <select class="form-control mb-3" name="id_torneo">
+
+
+            <option value="">
+                -- Seleccionar torneo --
+            </option>
+
+
+
+            {% for t in torneos %}
+
+
+            <option value="{{t.id_torneo}}">
+                {{t.nombre}}
+            </option>
+
+
+
+            {% endfor %}
+
+
+        </select>
+
+
+
+
+
+
+        <label class="form-label">
+            Equipo 1
+        </label>
+
+
+        <select class="form-control mb-3" name="id_equipo1">
+
+
+            <option value="">
+                -- Seleccionar equipo --
+            </option>
+
+
+
+            {% for e in equipos %}
+
+
+            <option value="{{e.id_equipo}}">
+                {{e.nombre}}
+            </option>
+
+
+
+            {% endfor %}
+
+
+
+        </select>
+
+
+
+
+
+
+
+
+        <label class="form-label">
+            Equipo 2
+        </label>
+
+
+        <select class="form-control mb-3" name="id_equipo2">
+
+
+            <option value="">
+                -- Seleccionar equipo --
+            </option>
+
+
+
+
+            {% for e in equipos %}
+
+
+            <option value="{{e.id_equipo}}">
+                {{e.nombre}}
+            </option>
+
+
+
+            {% endfor %}
+
+
+
+        </select>
+
+
+
+
+
+
+
+
+        <label class="form-label">
+            Fecha de partida
+        </label>
+
+
+        <input class="form-control mb-3" type="date" name="fecha">
+
+
+
+
+
+
+
+
+        <label class="form-label">
+            Ronda
+        </label>
+
+
+        <input class="form-control mb-3" name="ronda" placeholder="Ejemplo: Semifinal, Final, Grupo A">
+
+
+
+
+
+
+
+
+        <label class="form-label">
+            Estado de partida
+        </label>
+
+
+
+        <select class="form-control mb-3" name="estado">
+
+
+            <option value="">
+                -- Seleccionar estado --
+            </option>
+
+
+            <option>
+                Pendiente
+            </option>
+
+
+            <option>
+                En Juego
+            </option>
+
+
+            <option>
+                Finalizada
+            </option>
+
+
+
+        </select>
+
+
+
+
+
+
+
+        <button class="btn btn-success">
+            💾 Guardar Partida
+        </button>
+
+
+
+
+    </form>
+
+
+</div>
+
+
+{% endblock %}

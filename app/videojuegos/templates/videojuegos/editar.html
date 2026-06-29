@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<h2>Editar Videojuego</h2>
+
+
+
+<form method="POST">
+
+
+    <input class="form-control mb-2" name="nombre" value="{{juego.nombre}}">
+
+
+
+    <input class="form-control mb-2" name="genero" value="{{juego.genero}}">
+
+
+
+    <textarea class="form-control mb-2" name="descripcion">
+
+{{juego.descripcion}}
+
+</textarea>
+
+
+
+    <select class="form-control mb-2" name="estado">
+
+
+        <option>{{juego.estado}}</option>
+
+        <option>Activo</option>
+
+        <option>Inactivo</option>
+
+
+    </select>
+
+
+
+    <button class="btn btn-warning">
+
+        Actualizar
+
+    </button>
+
+
+
+</form>
+
+
+{% endblock %}

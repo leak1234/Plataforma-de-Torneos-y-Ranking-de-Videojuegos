@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Agregar Jugador</h2>
+
+<form method="POST">
+
+    <select class="form-control mb-2" name="id_equipo">
+
+        {% for e in equipos %}
+
+        <option value="{{e.id_equipo}}">
+            {{e.nombre}}
+        </option>
+
+        {% endfor %}
+
+    </select>
+
+
+    <select class="form-control mb-2" name="id_usuario">
+
+        {% for u in usuarios %}
+
+        <option value="{{u.id_usuario}}">
+            {{u.usuario}}
+        </option>
+
+        {% endfor %}
+
+    </select>
+
+
+    <select class="form-control mb-2" name="rol_equipo">
+
+        <option>Jugador</option>
+
+        <option>Capitan</option>
+
+    </select>
+
+
+    <button class="btn btn-success">
+        Guardar
+    </button>
+
+</form>
+
+{% endblock %}

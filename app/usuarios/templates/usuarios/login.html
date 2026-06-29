@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-5">
+
+            <div class="card bg-dark border-secondary shadow">
+
+                <div class="card-body p-4">
+
+
+                    <h2 class="text-center text-white mb-4">
+                        <i class="bi bi-person-circle text-info"></i>
+                        Iniciar Sesión
+                    </h2>
+
+
+                    <form method="POST">
+
+
+                        <div class="mb-3">
+
+                            <label class="text-white">
+                                Correo
+                            </label>
+
+                            <input type="email" name="correo" class="form-control bg-dark text-white border-secondary"
+                                placeholder="correo@ejemplo.com" required>
+
+                        </div>
+
+
+
+                        <div class="mb-3">
+
+                            <label class="text-white">
+                                Contraseña
+                            </label>
+
+                            <input type="password" name="password"
+                                class="form-control bg-dark text-white border-secondary" placeholder="Contraseña"
+                                required>
+
+                        </div>
+
+
+
+                        <button class="btn btn-primary w-100 fw-bold">
+
+                            <i class="bi bi-box-arrow-in-right"></i>
+                            Ingresar
+
+                        </button>
+
+
+                    </form>
+
+
+                    <hr class="border-secondary mt-4">
+
+
+                    <div class="text-center">
+
+                        <p class="text-white">
+
+                            ¿No tienes cuenta?
+
+                            <a href="{{ url_for('bp_usuarios.registro') }}" class="text-info fw-bold">
+
+                                Registrarse
+
+                            </a>
+
+                        </p>
+
+
+                    </div>
+
+
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+{% endblock %}

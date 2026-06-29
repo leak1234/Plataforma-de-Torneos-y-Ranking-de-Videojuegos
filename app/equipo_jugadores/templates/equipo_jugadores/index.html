@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Roster de Equipos</h2>
+
+<a class="btn btn-primary mb-3" href="{{url_for('bp_Equipo_De_Jugadores.create')}}">
+    Agregar Jugador
+</a>
+
+<table class="table table-dark">
+
+    <tr>
+        <th>ID</th>
+        <th>Equipo</th>
+        <th>Jugador</th>
+        <th>Rol</th>
+        <th>Acciones</th>
+    </tr>
+
+    {% for j in jugadores %}
+
+    <tr>
+
+        <td>{{j.id_equipo_jugador}}</td>
+
+        <td>{{j.equipo.nombre}}</td>
+
+        <td>{{j.usuario.usuario}}</td>
+
+        <td>{{j.rol_equipo}}</td>
+
+        <td>
+
+            <a class="btn btn-warning btn-sm"
+                href="{{url_for('bp_Equipo_De_Jugadores.editar',id=j.id_equipo_jugador)}}">
+                Editar
+            </a>
+
+            <a class="btn btn-danger btn-sm"
+                href="{{url_for('bp_Equipo_De_Jugadores.eliminar',id=j.id_equipo_jugador)}}">
+                Eliminar
+            </a>
+
+        </td>
+
+    </tr>
+
+    {% endfor %}
+
+</table>
+
+{% endblock %}

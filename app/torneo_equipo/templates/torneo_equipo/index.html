@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Equipos en Torneos</h2>
+
+
+<a class="btn btn-primary" href="{{url_for('bp_torneo_equipo.create')}}">
+
+    Asignar Equipo
+
+</a>
+
+
+<table class="table table-dark mt-3">
+
+
+    <tr>
+
+        <th>ID</th>
+
+        <th>Torneo</th>
+
+        <th>Equipo</th>
+
+        <th>Estado</th>
+
+        <th>Acciones</th>
+
+
+    </tr>
+
+
+
+    {% for r in registros %}
+
+
+    <tr>
+
+        <td>{{r.id_torneo_equipo}}</td>
+
+        <td>{{r.torneo.nombre}}</td>
+
+        <td>{{r.equipo.nombre}}</td>
+
+        <td>{{r.estado}}</td>
+
+
+        <td>
+
+            <a class="btn btn-warning btn-sm" href="{{url_for('bp_torneo_equipo.editar',id=r.id_torneo_equipo)}}">
+
+                Editar
+
+            </a>
+
+
+            <a class="btn btn-danger btn-sm" href="{{url_for('bp_torneo_equipo.eliminar',id=r.id_torneo_equipo)}}">
+
+                Eliminar
+
+            </a>
+
+
+        </td>
+
+
+    </tr>
+
+
+    {% endfor %}
+
+
+</table>
+
+
+{% endblock %}

@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<h2>Equipos</h2>
+
+
+<a class="btn btn-primary mb-3" href="{{url_for('bp_equipos.create')}}">
+    Nuevo Equipo
+</a>
+
+
+
+<table class="table table-dark">
+
+
+    <tr>
+
+        <th>ID</th>
+
+        <th>Nombre</th>
+
+        <th>Código</th>
+
+        <th>Capitán</th>
+
+        <th>Estado</th>
+
+        <th>Acciones</th>
+
+    </tr>
+
+
+
+    {% for e in equipos %}
+
+
+    <tr>
+
+
+        <td>{{e.id_equipo}}</td>
+
+
+        <td>{{e.nombre}}</td>
+
+
+        <td>{{e.codigo_equipo}}</td>
+
+
+        <td>{{e.capitan.usuario}}</td>
+
+
+        <td>{{e.estado}}</td>
+
+
+        <td>
+
+
+            <a class="btn btn-warning btn-sm" href="{{url_for('bp_equipos.editar',id=e.id_equipo)}}">
+
+                Editar
+
+            </a>
+
+
+            <a class="btn btn-danger btn-sm" href="{{url_for('bp_equipos.eliminar',id=e.id_equipo)}}">
+
+                Eliminar
+
+            </a>
+
+
+        </td>
+
+
+    </tr>
+
+
+
+    {% endfor %}
+
+
+</table>
+
+
+{% endblock %}

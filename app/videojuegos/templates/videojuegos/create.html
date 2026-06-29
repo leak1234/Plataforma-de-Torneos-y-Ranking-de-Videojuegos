@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<h2>Registrar Videojuego</h2>
+
+
+
+<form method="POST">
+
+
+    <input class="form-control mb-2" name="nombre" placeholder="Nombre del juego">
+
+
+
+    <input class="form-control mb-2" name="genero" placeholder="Genero">
+
+
+
+    <textarea class="form-control mb-2" name="descripcion" placeholder="Descripcion"></textarea>
+
+
+
+    <button class="btn btn-success">
+
+        Guardar
+
+    </button>
+
+
+
+</form>
+
+
+{% endblock %}

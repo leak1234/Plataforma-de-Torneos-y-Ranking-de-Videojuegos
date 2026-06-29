@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Editar Estadística</h2>
+
+<form method="POST">
+
+
+    <input class="form-control mb-2" name="kills" value="{{estadistica.kills}}">
+
+    <input class="form-control mb-2" name="deaths" value="{{estadistica.deaths}}">
+
+    <input class="form-control mb-2" name="assists" value="{{estadistica.assists}}">
+
+
+    <button class="btn btn-warning">
+        Actualizar
+    </button>
+
+
+</form>
+
+{% endblock %}

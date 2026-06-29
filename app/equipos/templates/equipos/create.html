@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<div class="card p-4">
+
+
+    <h2 class="mb-4">
+        🏆 Crear Equipo
+    </h2>
+
+
+
+
+    <form method="POST">
+
+
+
+
+
+        <label class="form-label">
+            Nombre del equipo
+        </label>
+
+
+        <input class="form-control mb-3" name="nombre" placeholder="Ingrese nombre del equipo">
+
+
+
+
+
+
+        <label class="form-label">
+            Logo del equipo
+        </label>
+
+
+        <input class="form-control mb-3" name="logo" placeholder="Ingrese URL o nombre del logo">
+
+
+
+
+
+
+        <label class="form-label">
+            Capitán del equipo
+        </label>
+
+
+
+        <select class="form-control mb-3" name="id_capitan">
+
+
+
+            <option value="">
+                -- Seleccionar capitán --
+            </option>
+
+
+
+
+            {% for c in capitanes %}
+
+
+
+            <option value="{{c.id_usuario}}">
+
+                {{c.usuario}}
+
+            </option>
+
+
+
+
+            {% endfor %}
+
+
+
+        </select>
+
+
+
+
+
+
+        <button class="btn btn-success">
+
+            💾 Guardar Equipo
+
+        </button>
+
+
+
+    </form>
+
+
+
+</div>
+
+
+
+{% endblock %}

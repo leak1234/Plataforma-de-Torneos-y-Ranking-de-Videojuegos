@@ -1,0 +1,122 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container-fluid">
+
+    <h1 class="text-white fw-bold">TORNEOAPP</h1>
+    <p class="text-secondary">Plataforma competitiva de videojuegos</p>
+
+    <div class="row mt-4">
+
+        <div class="col-md-4">
+            <div class="card p-4">
+
+                <h4 class="text-info">Próximos Torneos</h4>
+
+                {% for t in torneos %}
+
+                <div class="border-bottom py-2">
+                    <strong>{{t.nombre}}</strong>
+                    <br>
+                    Estado: {{t.estado}}
+                </div>
+
+                {% else %}
+
+                <p>No hay torneos registrados</p>
+
+                {% endfor %}
+
+            </div>
+        </div>
+
+
+        <div class="col-md-4">
+            <div class="card p-4">
+
+                <h4 class="text-warning">Próximas Partidas</h4>
+
+                {% for p in partidas %}
+
+                <div class="border-bottom py-2">
+                    {{p.equipo_local}} VS {{p.equipo_visitante}}
+                </div>
+
+                {% else %}
+
+                <p>No existen partidas</p>
+
+                {% endfor %}
+
+            </div>
+        </div>
+
+
+        <div class="col-md-4">
+            <div class="card p-4">
+
+                <h4 class="text-success">Ranking</h4>
+
+                <table class="table table-dark">
+
+                    <tr>
+                        <th>Jugador</th>
+                        <th>Puntos</th>
+                    </tr>
+
+                    {% for r in rankings %}
+
+                    <tr>
+                        <td>{{r.jugador}}</td>
+                        <td>{{r.puntos}}</td>
+                    </tr>
+
+                    {% else %}
+
+                    <tr>
+                        <td colspan="2">Sin datos</td>
+                    </tr>
+
+                    {% endfor %}
+
+                </table>
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <hr class="mt-5">
+
+    <h2 class="text-white">Equipos destacados</h2>
+
+    <div class="row">
+
+        {% for e in equipos %}
+
+        <div class="col-md-3 mt-3">
+
+            <div class="card p-3 text-center">
+
+                <h5>{{e.nombre}}</h5>
+
+                <p>{{e.pais}}</p>
+
+            </div>
+
+        </div>
+
+
+        {% else %}
+
+        <p>No hay equipos registrados</p>
+
+        {% endfor %}
+
+    </div>
+
+</div>
+
+{% endblock %}

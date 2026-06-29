@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<h2>Editar Sanción</h2>
+
+
+<form method="POST">
+
+
+    <select class="form-control mb-2" name="usuario">
+
+        {% for u in usuarios %}
+
+        <option value="{{u.id_usuario}}">
+
+            {{u.usuario}}
+
+        </option>
+
+        {% endfor %}
+
+    </select>
+
+
+    <input class="form-control mb-2" name="motivo" value="{{sancion.motivo}}">
+
+
+    <input class="form-control mb-2" name="fecha" value="{{sancion.fecha_sancion}}">
+
+
+    <select class="form-control mb-2" name="estado">
+
+        <option>{{sancion.estado}}</option>
+
+        <option>Activa</option>
+
+        <option>Finalizada</option>
+
+    </select>
+
+
+    <button class="btn btn-warning">
+
+        Actualizar
+
+    </button>
+
+
+</form>
+
+
+{% endblock %}

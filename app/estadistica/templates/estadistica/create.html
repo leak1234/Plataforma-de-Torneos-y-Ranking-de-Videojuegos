@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Registrar Estadística</h2>
+
+<form method="POST">
+
+
+    <select class="form-control mb-2" name="id_usuario">
+
+        {% for j in jugadores %}
+
+        <option value="{{j.id_usuario}}">
+            {{j.usuario}}
+        </option>
+
+        {% endfor %}
+
+    </select>
+
+
+    <select class="form-control mb-2" name="id_partida">
+
+        {% for p in partidas %}
+
+        <option value="{{p.id_partida}}">
+            Partida {{p.id_partida}}
+        </option>
+
+        {% endfor %}
+
+    </select>
+
+
+    <input class="form-control mb-2" name="kills" placeholder="Kills">
+
+    <input class="form-control mb-2" name="deaths" placeholder="Deaths">
+
+    <input class="form-control mb-2" name="assists" placeholder="Assists">
+
+
+    <button class="btn btn-success">
+        Guardar
+    </button>
+
+
+</form>
+
+{% endblock %}

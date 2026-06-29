@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Editar Jugador</h2>
+
+<form method="POST">
+
+    <select class="form-control mb-2" name="rol_equipo">
+
+        <option>{{jugador.rol_equipo}}</option>
+
+        <option>Jugador</option>
+
+        <option>Capitan</option>
+
+    </select>
+
+    <button class="btn btn-warning">
+        Actualizar
+    </button>
+
+</form>
+
+{% endblock %}

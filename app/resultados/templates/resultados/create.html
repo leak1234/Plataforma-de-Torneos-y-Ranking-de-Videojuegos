@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Registrar Resultado</h2>
+
+
+<form method="POST">
+
+
+    <select class="form-control mb-2" name="id_partida">
+
+
+        {% for p in partidas %}
+
+
+        <option value="{{p.id_partida}}">
+
+            Partida {{p.id_partida}}
+
+        </option>
+
+
+        {% endfor %}
+
+
+    </select>
+
+
+    <select class="form-control mb-2" name="id_torneo">
+
+
+        {% for t in torneos %}
+
+
+        <option value="{{t.id_torneo}}">
+
+            {{t.nombre}}
+
+        </option>
+
+
+        {% endfor %}
+
+
+    </select>
+
+
+
+    <input class="form-control mb-2" name="marcador_equipo1" placeholder="Marcador equipo 1">
+
+
+    <input class="form-control mb-2" name="marcador_equipo2" placeholder="Marcador equipo 2">
+
+
+    <input class="form-control mb-2" name="ganador" placeholder="Equipo ganador">
+
+
+    <button class="btn btn-success">
+
+        Guardar
+
+    </button>
+
+
+</form>
+
+
+{% endblock %}

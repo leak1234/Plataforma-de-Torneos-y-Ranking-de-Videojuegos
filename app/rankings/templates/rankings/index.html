@@ -1,0 +1,181 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<div class="mb-4">
+
+    <h2 class="fw-bold">
+
+        <i class="bi bi-trophy-fill text-warning"></i>
+
+        Ranking Jugadores
+
+    </h2>
+
+    <p class="text-secondary">
+        Clasificación general de jugadores
+    </p>
+
+
+</div>
+
+
+
+
+<div class="row">
+
+
+
+    {% for r in ranking %}
+
+
+
+
+    <div class="col-md-4 mb-4">
+
+
+
+        <div class="card shadow h-100">
+
+
+
+            <div class="card-body text-center">
+
+
+
+                <h1 class="fw-bold text-warning">
+
+                    #{{loop.index}}
+
+                </h1>
+
+
+
+
+                <h4 class="text-info">
+
+                    <i class="bi bi-person-circle"></i>
+
+                    {{r.jugador}}
+
+                </h4>
+
+
+
+
+                <hr>
+
+
+
+
+                <div class="row mt-3">
+
+
+
+                    <div class="col">
+
+
+                        <h5 class="text-danger">
+
+                            {{r.kills}}
+
+                        </h5>
+
+                        <small>
+
+                            Kills
+
+                        </small>
+
+
+                    </div>
+
+
+
+
+
+                    <div class="col">
+
+
+                        <h5 class="text-success">
+
+                            {{r.assists}}
+
+                        </h5>
+
+                        <small>
+
+                            Assists
+
+                        </small>
+
+
+                    </div>
+
+
+
+
+
+                    <div class="col">
+
+
+                        <h5 class="text-warning">
+
+                            {{r.puntos}}
+
+                        </h5>
+
+                        <small>
+
+                            Puntos
+
+                        </small>
+
+
+                    </div>
+
+
+
+
+                </div>
+
+
+
+
+
+            </div>
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+    {% else %}
+
+
+
+    <div class="alert alert-secondary">
+
+        No existen jugadores en el ranking.
+
+    </div>
+
+
+
+    {% endfor %}
+
+
+
+
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<h2>Editar Usuario</h2>
+
+
+<form method="POST">
+
+
+    <input class="form-control mb-2" name="usuario" value="{{usuario.usuario}}">
+
+
+    <input class="form-control mb-2" name="correo" value="{{usuario.correo}}">
+
+
+    <select class="form-control mb-2" name="rol">
+
+        <option>{{usuario.rol}}</option>
+
+        <option>usuario</option>
+
+        <option>jugador</option>
+
+        <option>admin</option>
+
+    </select>
+
+
+    <select class="form-control mb-2" name="estado">
+
+        <option>{{usuario.estado}}</option>
+
+        <option>Activo</option>
+
+        <option>Inactivo</option>
+
+    </select>
+
+
+    <button class="btn btn-warning">
+
+        Actualizar
+
+    </button>
+
+
+</form>
+
+
+{% endblock %}

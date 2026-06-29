@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Sanciones</h2>
+
+<a class="btn btn-primary" href="{{url_for('bp_sanciones.create')}}">
+    Nueva sanción
+</a>
+
+
+<table class="table table-dark mt-3">
+
+    <tr>
+        <th>ID</th>
+        <th>Usuario</th>
+        <th>Motivo</th>
+        <th>Fecha</th>
+        <th>Estado</th>
+        <th>Acciones</th>
+    </tr>
+
+
+    {% for s in sanciones %}
+
+    <tr>
+
+        <td>{{s.id_sancion}}</td>
+
+        <td>{{s.usuario.usuario}}</td>
+
+        <td>{{s.motivo}}</td>
+
+        <td>{{s.fecha_sancion}}</td>
+
+        <td>{{s.estado}}</td>
+
+
+        <td>
+
+            <a class="btn btn-warning btn-sm" href="{{url_for('bp_sanciones.editar',id=s.id_sancion)}}">
+                Editar
+            </a>
+
+
+            <a class="btn btn-danger btn-sm" href="{{url_for('bp_sanciones.eliminar',id=s.id_sancion)}}">
+                Eliminar
+            </a>
+
+
+        </td>
+
+
+    </tr>
+
+    {% endfor %}
+
+
+</table>
+
+
+{% endblock %}

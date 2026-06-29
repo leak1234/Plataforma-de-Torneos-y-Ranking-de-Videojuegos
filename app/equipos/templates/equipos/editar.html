@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<h2>Editar Equipo</h2>
+
+
+<form method="POST">
+
+
+    <input class="form-control mb-2" name="nombre" value="{{equipo.nombre}}">
+
+
+    <input class="form-control mb-2" name="logo" value="{{equipo.logo}}">
+
+
+    <select class="form-control mb-2" name="estado">
+
+
+        <option>{{equipo.estado}}</option>
+
+        <option>Activo</option>
+
+        <option>Inactivo</option>
+
+
+    </select>
+
+
+    <button class="btn btn-warning">
+
+        Actualizar
+
+    </button>
+
+
+</form>
+
+
+{% endblock %}
