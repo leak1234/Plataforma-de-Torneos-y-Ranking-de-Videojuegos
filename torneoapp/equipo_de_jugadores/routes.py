@@ -1,6 +1,6 @@
 from flask import render_template, redirect, url_for, Blueprint, flash, request
-from blueprintapp import db
-from blueprintapp.equipo_de_jugadores.models import EquipoDeJugadores
+from torneoapp import db
+from torneoapp.equipo_de_jugadores.models import EquipoDeJugadores
 
 bp_Equipo_De_Jugadores = Blueprint('bp_Equipo_De_Jugadores', __name__, template_folder='templates')
 

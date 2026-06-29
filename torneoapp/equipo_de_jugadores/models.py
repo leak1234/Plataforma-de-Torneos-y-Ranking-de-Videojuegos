@@ -1,4 +1,4 @@
-from blueprintapp import db
+from torneoapp import db
 
 class EquipoDeJugadores(db.Model):
     __tablename__ = 'EquipoDeJugadores'

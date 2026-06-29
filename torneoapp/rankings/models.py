@@ -1,4 +1,4 @@
-from blueprintapp import db
+from torneoapp import db
 
 class Rankings(db.Model):
     __tablename__ = 'Rankings'
