@@ -1,25 +1,29 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
+import os  
 
 db=SQLAlchemy()
 migrate=Migrate()
 
-
 def create_app():
-
     app=Flask(__name__,template_folder="templates")
-
-    app.config["SECRET_KEY"]="torneo_secret"
-
-    app.config["SQLALCHEMY_DATABASE_URI"]="sqlite:///torneo.db"
-
+    
+    # 1. Usar clave secreta de Render, o la local si no existe
+    app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY", "torneo_secret")
+    
+    # 2. Leer la base de datos de Render (y corregir el prefijo postgres:// a postgresql://)
+    database_url = os.environ.get("DATABASE_URL", "sqlite:///torneo.db")
+    if database_url.startswith("postgres://"):
+        database_url = database_url.replace("postgres://", "postgresql://", 1)
+        
+    app.config["SQLALCHEMY_DATABASE_URI"] = database_url
+    
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"]=False
 
-
     db.init_app(app)
-
     migrate.init_app(app,db)
+    
 
 
 
